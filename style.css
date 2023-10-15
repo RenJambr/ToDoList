@@ -1,0 +1,196 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #404040;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header-image{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 45%;
+}
+.header-image img{
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.header-image .overlay{
+    background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9); 
+    width: 100%;
+    opacity: 0.7;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+h1{
+    font-size: 45px;
+    z-index: 100;
+    color: #fff;
+    letter-spacing: 9px;
+    margin-top: 220px;
+}
+h3{
+    z-index: 200;
+    color: #fff;
+    font-weight: 400;    
+    letter-spacing: 2px;
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 400px;
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    z-index: 100;
+}
+.container .enterTodoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .enterTodoDiv #todoInput{
+    outline:none;
+    border: none;
+    font-size: 20px;
+    padding: 15px 50px;
+    color: grey;
+    margin: 30px 0px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #222;
+}
+.container .enterTodoDiv #addTodo{
+    padding: 15px 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #3276b5;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+.container .enterTodoDiv #addTodo:hover{
+    background-color: #5484b1;
+    transition:0.3s ease;
+}
+.todos{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 15px;
+}
+.todo{
+    width: 420px;
+    padding: 15px;
+    margin:8px;
+    font-size: 20px;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor:pointer;
+    border-radius: 5px;
+    color:#757575;
+    position: relative;
+    overflow: hidden;
+}
+.todo p{
+    z-index: 100;
+}
+
+.todo button{
+    background: transparent;
+    outline:none;
+    border:none;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+}
+.todo button img{
+    width: 25px;
+}
+.todo.complete::before{
+    content: "";
+    background: url(correct.png) center no-repeat;
+    position: absolute;
+    top: -5px;
+    right: 50px;
+    opacity: 0.5;
+    width: 70px;
+    scale:0.7;
+    height: 70px;
+}
+@media only screen and (max-width: 550px){
+    h1{
+        font-size: 35px;
+        margin-top: 70px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .header-image{
+        height: 30%;
+    }
+    .container .enterTodoDiv #todoInput {
+        font-size: 17px;
+        padding: 12px 30px;
+    }
+    .container .enterTodoDiv #addTodo{
+        padding: 12px 20px;
+        font-size: 17px;
+    }
+    .todo{
+        width: 340px;
+    }
+}
+@media only screen and (max-width: 380px){
+    h1{
+        font-size: 30px;
+        margin-top: 100px;
+    }
+    h3{
+        font-size: 14px;
+    }
+    .container .enterTodoDiv #todoInput {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+    .container .enterTodoDiv #addTodo{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    .todo{
+        width: 250px;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .todo button img{
+        width: 20px;
+    }
+    .todo.complete::before{
+        right: 30px;
+        top: -10px;
+        scale: 0.5;
+    }
+}
